@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./packages/core"
+    },
+    {
+      "path": "./packages/hardcover"
+    },
+    {
+      "path": "./packages/open-library"
+    },
+    {
+      "path": "./packages/google-books"
+    }
+  ]
+}
