@@ -1,0 +1,35 @@
+{
+  "name": "google-books",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/google-books/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "packages/google-books/dist",
+        "tsConfig": "packages/google-books/tsconfig.lib.json",
+        "main": "packages/google-books/src/index.ts"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx tsgo --noEmit --project packages/google-books/tsconfig.lib.json"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx eslint packages/google-books/src --max-warnings 0"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx vitest run --config packages/google-books/vitest.config.ts"
+      }
+    }
+  }
+}

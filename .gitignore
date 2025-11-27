@@ -42,3 +42,19 @@ Thumbs.db
 .nx/workspace-data
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
+
+
+# START Ruler Generated Files
+/.crush.json
+/.crush.json.bak
+/.mcp.json
+/.mcp.json.bak
+/AGENTS.md
+/AGENTS.md.bak
+/CLAUDE.md
+/CLAUDE.md.bak
+/CRUSH.md
+/CRUSH.md.bak
+/opencode.json
+/opencode.json.bak
+# END Ruler Generated Files

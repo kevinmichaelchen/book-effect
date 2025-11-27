@@ -1,1 +1,1 @@
-export * from './lib/hardcover.js';
+export { HardcoverClient, HardcoverConfig } from "./lib/hardcover.ts";

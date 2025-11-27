@@ -1,20 +1,36 @@
 {
   "name": "@book-effect/source",
   "version": "0.0.0",
+  "type": "module",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "typecheck": "nx run-many -t typecheck",
+    "lint": "nx run-many -t lint",
+    "test": "nx run-many -t test",
+    "knip": "knip"
+  },
   "private": true,
-  "dependencies": {},
   "devDependencies": {
+    "@effect/eslint-plugin": "^0.3.2",
+    "@effect/language-service": "^0.57.0",
+    "@effect/vitest": "^0.18.0",
+    "@eslint/js": "^9.39.1",
+    "@intellectronica/ruler": "^0.3.15",
     "@nx/js": "22.1.2",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
     "@types/node": "20.19.9",
+    "@typescript/native-preview": "7.0.0-dev.20251127.1",
+    "eslint": "^9.39.1",
+    "knip": "^5.70.2",
+    "lefthook": "^2.0.4",
     "nx": "22.1.2",
     "tslib": "^2.3.0",
     "typescript": "~5.9.2",
-    "verdaccio": "^6.0.5"
+    "typescript-eslint": "^8.48.0",
+    "verdaccio": "^6.0.5",
+    "vitest": "^3.1.0"
   },
   "nx": {
     "includedScripts": [],

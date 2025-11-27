@@ -1,21 +1,33 @@
 {
   "compilerOptions": {
     "composite": true,
+    "declaration": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,
+    "exactOptionalPropertyTypes": true,
     "importHelpers": true,
+    "incremental": true,
     "isolatedModules": true,
-    "lib": ["es2022"],
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
+    "lib": ["ES2022"],
+    "module": "NodeNext",
+    "moduleDetection": "force",
+    "moduleResolution": "NodeNext",
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
+    "rewriteRelativeImportExtensions": true,
     "skipLibCheck": true,
+    "sourceMap": true,
     "strict": true,
-    "target": "es2022",
-    "customConditions": ["@book-effect/source"]
+    "target": "ES2022",
+    "verbatimModuleSyntax": true,
+    "customConditions": ["@book-effect/source"],
+    "plugins": [
+      {
+        "name": "@effect/language-service"
+      }
+    ]
   }
 }

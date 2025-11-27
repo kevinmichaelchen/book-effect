@@ -1,0 +1,51 @@
+# Ruler Configuration File
+# See https://ai.intellectronica.net/ruler for documentation.
+
+# Only generate configs for claude, crush, and opencode
+default_agents = ["claude", "crush", "opencode"]
+
+# --- Agent Specific Configurations ---
+
+[agents.claude]
+enabled = true
+
+[agents.crush]
+enabled = true
+
+[agents.opencode]
+enabled = true
+
+# --- MCP Servers ---
+
+[mcp_servers.effect-docs]
+command = "npx"
+args = ["-y", "effect-mcp@latest"]
+
+[mcp_servers.effect-patterns]
+url = "https://mcp-server-three-omega.vercel.app"
+
+[mcp_servers.effect-patterns.headers]
+x-api-key = "demo-beta-2025"
+
+[mcp_servers.github]
+url = "https://api.githubcopilot.com/mcp/"
+
+[mcp_servers.github.headers]
+Authorization = "Bearer ${GITHUB_PERSONAL_ACCESS_TOKEN}"
+
+[mcp_servers.nx-mcp]
+command = "npx"
+args = ["-y", "nx-mcp@latest"]
+
+[mcp_servers.deepwiki]
+url = "https://mcp.deepwiki.com/sse"
+
+[mcp_servers.exa]
+command = "npx"
+args = ["-y", "exa-mcp-server"]
+
+[mcp_servers.exa.env]
+EXA_API_KEY = "${EXA_API_KEY}"
+
+[mcp_servers.grep]
+url = "https://mcp.grep.app"

@@ -12,6 +12,28 @@ cover links.
 pnpm add @book-effect/google-books
 ```
 
+## Usage
+
+```typescript
+import { GoogleBooksClient } from "@book-effect/google-books";
+import { FetchHttpClient } from "@effect/platform";
+import { Effect } from "effect";
+
+const program = Effect.gen(function* () {
+  const client = yield* GoogleBooksClient;
+  const book = yield* client.getByIsbn("9780134757599");
+  const results = yield* client.search("Domain Driven Design");
+  return { book, results };
+});
+
+Effect.runPromise(
+  program.pipe(
+    Effect.provide(GoogleBooksClient.Live),
+    Effect.provide(FetchHttpClient.layer),
+  ),
+);
+```
+
 ## Building
 
 ```sh

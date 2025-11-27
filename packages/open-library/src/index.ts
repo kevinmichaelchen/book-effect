@@ -1,1 +1,1 @@
-export * from './lib/open-library.js';
+export { OpenLibraryClient } from "./lib/open-library.ts";

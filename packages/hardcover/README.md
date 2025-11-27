@@ -11,6 +11,29 @@ metadata including title, authors, published year, tags, and ratings.
 pnpm add @book-effect/hardcover
 ```
 
+## Usage
+
+```typescript
+import { HardcoverClient, HardcoverConfig } from "@book-effect/hardcover";
+import { FetchHttpClient } from "@effect/platform";
+import { Effect } from "effect";
+
+const program = Effect.gen(function* () {
+  const client = yield* HardcoverClient;
+  const book = yield* client.getByIsbn("9780134757599");
+  const results = yield* client.search("Domain Driven Design");
+  return { book, results };
+});
+
+Effect.runPromise(
+  program.pipe(
+    Effect.provide(HardcoverClient.Live),
+    Effect.provide(HardcoverConfig.FromEnv), // reads HARDCOVER_API_KEY
+    Effect.provide(FetchHttpClient.layer),
+  ),
+);
+```
+
 ## Building
 
 ```sh

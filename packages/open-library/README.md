@@ -12,6 +12,28 @@ queries.
 pnpm add @book-effect/open-library
 ```
 
+## Usage
+
+```typescript
+import { OpenLibraryClient } from "@book-effect/open-library";
+import { FetchHttpClient } from "@effect/platform";
+import { Effect } from "effect";
+
+const program = Effect.gen(function* () {
+  const client = yield* OpenLibraryClient;
+  const book = yield* client.getByIsbn("9780134757599");
+  const results = yield* client.search("Domain Driven Design");
+  return { book, results };
+});
+
+Effect.runPromise(
+  program.pipe(
+    Effect.provide(OpenLibraryClient.Live),
+    Effect.provide(FetchHttpClient.layer),
+  ),
+);
+```
+
 ## Building
 
 ```sh

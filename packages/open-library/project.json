@@ -1,0 +1,35 @@
+{
+  "name": "open-library",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/open-library/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "packages/open-library/dist",
+        "tsConfig": "packages/open-library/tsconfig.lib.json",
+        "main": "packages/open-library/src/index.ts"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx tsgo --noEmit --project packages/open-library/tsconfig.lib.json"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx eslint packages/open-library/src --max-warnings 0"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx vitest run --config packages/open-library/vitest.config.ts"
+      }
+    }
+  }
+}

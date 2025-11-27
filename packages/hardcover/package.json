@@ -19,6 +19,8 @@
     "!**/*.tsbuildinfo"
   ],
   "dependencies": {
-    "tslib": "^2.3.0"
+    "@book-effect/core": "workspace:*",
+    "@effect/platform": "^0.77.0",
+    "effect": "^3.12.0"
   }
 }

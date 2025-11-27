@@ -19,6 +19,6 @@
     "!**/*.tsbuildinfo"
   ],
   "dependencies": {
-    "tslib": "^2.3.0"
+    "effect": "^3.12.0"
   }
 }

@@ -1,0 +1,17 @@
+pre-commit:
+  parallel: true
+  commands:
+    typecheck:
+      env:
+        NX_TUI: "false"
+      run: pnpm typecheck
+    lint:
+      env:
+        NX_TUI: "false"
+      run: pnpm lint
+    test:
+      env:
+        NX_TUI: "false"
+      run: pnpm test
+    knip:
+      run: pnpm knip
