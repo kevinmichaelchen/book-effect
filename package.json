@@ -7,7 +7,8 @@
     "typecheck": "nx run-many -t typecheck",
     "lint": "nx run-many -t lint",
     "test": "nx run-many -t test",
-    "knip": "knip"
+    "knip": "knip",
+    "ruler": "ruler apply --config .ruler/ruler.toml"
   },
   "private": true,
   "devDependencies": {

@@ -21,12 +21,6 @@ enabled = true
 command = "npx"
 args = ["-y", "effect-mcp@latest"]
 
-[mcp_servers.effect-patterns]
-url = "https://mcp-server-three-omega.vercel.app"
-
-[mcp_servers.effect-patterns.headers]
-x-api-key = "demo-beta-2025"
-
 [mcp_servers.github]
 url = "https://api.githubcopilot.com/mcp/"
 
