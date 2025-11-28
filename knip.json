@@ -23,5 +23,6 @@
     }
   },
   "ignore": ["**/dist/**"],
-  "ignoreDependencies": ["@swc/helpers", "@intellectronica/ruler"]
+  "ignoreDependencies": ["@swc/helpers"],
+  "ignoreBinaries": ["build"]
 }
