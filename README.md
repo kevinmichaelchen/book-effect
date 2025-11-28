@@ -26,28 +26,9 @@ nx build core
 
 ## Releasing
 
-This project uses [NX Release][nx-release] with [conventional
-commits][conventional-commits] for automated versioning.
-
-### Create a release
-
-```sh
-# Preview what will happen (dry run)
-nx release --skip-publish --dry-run
-
-# Create the release (bumps versions, generates changelog, creates git tag)
-nx release --skip-publish
-
-# Push the tag to trigger the release workflow
-git push --follow-tags
-```
-
-The `--skip-publish` flag is used because publishing to npm is handled by GitHub
-Actions when the tag is pushed.
-
-### How versioning works
-
-Version bumps are determined automatically from commit messages:
+Releases are fully automated via GitHub Actions when commits are pushed to
+`main`. The workflow uses [NX Release][nx-release] with [conventional
+commits][conventional-commits] to determine version bumps:
 
 | Commit prefix     | Version bump |
 | ----------------- | ------------ |
@@ -55,13 +36,13 @@ Version bumps are determined automatically from commit messages:
 | `fix:`            | Patch        |
 | `BREAKING CHANGE` | Major        |
 
-### What happens on release
+On each push to `main`, the release workflow will:
 
-1. Package versions are bumped in all `package.json` files
-2. `CHANGELOG.md` is updated with the new version's changes
-3. A git commit and tag (e.g., `v0.2.0`) are created and pushed
-4. GitHub Actions creates a GitHub Release
-5. Packages are published to npm
+1. Analyze commits since the last release
+2. Bump package versions accordingly
+3. Update `CHANGELOG.md`
+4. Create a git tag and GitHub Release
+5. Publish packages to npm
 
 [effect]: https://effect.website
 [core]: ./packages/core
