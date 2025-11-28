@@ -1,3 +1,13 @@
+## 0.2.2 (2025-11-28)
+
+### 🩹 Fixes
+
+- Add repository field for npm provenance validation ([39bee5b](https://github.com/kevinmichaelchen/book-effect/commit/39bee5b))
+
+### ❤️ Thank You
+
+- Kevin Chen @kevinmichaelchen
+
 ## 0.2.1 (2025-11-28)
 
 ### 🩹 Fixes
