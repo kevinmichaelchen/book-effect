@@ -11,7 +11,7 @@ import {
 } from "@book-effect/core";
 import { HttpClient, HttpClientRequest, HttpClientResponse } from "@effect/platform";
 import type { HttpClientError } from "@effect/platform";
-import { Config, ConfigError, Context, Effect, Layer, Schema } from "effect";
+import { Config, ConfigError, Context, Effect, Layer, Redacted, Schema } from "effect";
 
 // ============================================================================
 // Hardcover GraphQL API Response Schemas
@@ -200,7 +200,7 @@ const GRAPHQL_ENDPOINT = "https://api.hardcover.app/v1/graphql";
  */
 export class HardcoverConfig extends Context.Tag("HardcoverConfig")<
   HardcoverConfig,
-  { readonly apiKey: string }
+  { readonly apiKey: Redacted.Redacted }
 >() {
   /**
    * Layer that reads API key from environment variable.
@@ -208,7 +208,7 @@ export class HardcoverConfig extends Context.Tag("HardcoverConfig")<
   static readonly FromEnv: Layer.Layer<HardcoverConfig, ConfigError.ConfigError> = Layer.effect(
     this,
     Effect.gen(function*() {
-      const apiKey = yield* Config.string("HARDCOVER_API_KEY");
+      const apiKey = yield* Config.redacted("HARDCOVER_API_KEY");
       return { apiKey };
     }),
   );
@@ -216,7 +216,8 @@ export class HardcoverConfig extends Context.Tag("HardcoverConfig")<
   /**
    * Layer for testing with a provided API key.
    */
-  static readonly make = (apiKey: string): Layer.Layer<HardcoverConfig> => Layer.succeed(this, { apiKey });
+  static readonly make = (apiKey: string): Layer.Layer<HardcoverConfig> =>
+    Layer.succeed(this, { apiKey: Redacted.make(apiKey) });
 }
 
 /**
@@ -235,7 +236,7 @@ const make = Effect.gen(function*() {
     Effect.gen(function*() {
       const baseRequest = HttpClientRequest.post(GRAPHQL_ENDPOINT).pipe(
         HttpClientRequest.setHeader("Content-Type", "application/json"),
-        HttpClientRequest.setHeader("authorization", config.apiKey),
+        HttpClientRequest.setHeader("authorization", Redacted.value(config.apiKey)),
       );
 
       const request = yield* HttpClientRequest.bodyJson(baseRequest, {
