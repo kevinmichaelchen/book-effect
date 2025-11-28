@@ -1,3 +1,13 @@
+## 0.2.3 (2025-11-28)
+
+### 🩹 Fixes
+
+- Add dependsOn to typecheck for project reference support ([5f44b39](https://github.com/kevinmichaelchen/book-effect/commit/5f44b39))
+
+### ❤️ Thank You
+
+- Kevin Chen @kevinmichaelchen
+
 ## 0.2.2 (2025-11-28)
 
 ### 🩹 Fixes
