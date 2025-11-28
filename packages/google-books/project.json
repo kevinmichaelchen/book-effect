@@ -8,6 +8,7 @@
       "dependsOn": ["^build"]
     },
     "typecheck": {
+      "dependsOn": ["^build"],
       "executor": "nx:run-commands",
       "options": {
         "command": "npx tsgo --noEmit --project packages/google-books/tsconfig.lib.json"
