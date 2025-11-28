@@ -26,9 +26,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run affected tasks
-        uses: mansagroup/nrwl-nx-action@v3
-        with:
-          targets: typecheck,lint,test
-          parallel: 3
-          affected: true
+      - name: Set NX SHAs
+        uses: nrwl/nx-set-shas@v4
+
+      - name: Run affected lint
+        run: pnpm nx affected -t lint
+
+      - name: Run affected typecheck
+        run: pnpm nx affected -t typecheck
+
+      - name: Run affected test
+        run: pnpm nx affected -t test
