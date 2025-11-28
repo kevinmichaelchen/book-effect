@@ -4,6 +4,7 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
+    "build": "nx run-many -t build",
     "typecheck": "nx run-many -t typecheck",
     "lint": "nx run-many -t lint",
     "test": "nx run-many -t test",
@@ -27,6 +28,7 @@
     "knip": "^5.70.2",
     "lefthook": "^2.0.4",
     "nx": "22.1.2",
+    "tsdown": "^0.16.8",
     "tslib": "^2.3.0",
     "typescript": "~5.9.2",
     "typescript-eslint": "^8.48.0",

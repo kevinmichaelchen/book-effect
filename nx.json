@@ -15,18 +15,22 @@
     {
       "plugin": "@nx/js/typescript",
       "options": {
-        "typecheck": {
-          "targetName": "typecheck"
-        },
-        "build": {
-          "targetName": "build",
-          "configName": "tsconfig.lib.json",
-          "buildDepsName": "build-deps",
-          "watchDepsName": "watch-deps"
-        }
+        "typecheck": false,
+        "build": false
       }
     }
   ],
+  "targetDefaults": {
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{projectRoot}/dist"],
+      "options": {
+        "command": "pnpm exec tsdown",
+        "cwd": "{projectRoot}"
+      },
+      "cache": true
+    }
+  },
   "release": {
     "version": {
       "conventionalCommits": true

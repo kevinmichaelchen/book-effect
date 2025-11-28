@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "paths": {
+      "@book-effect/core": ["./packages/core/src/index.ts"],
+      "@book-effect/hardcover": ["./packages/hardcover/src/index.ts"],
+      "@book-effect/open-library": ["./packages/open-library/src/index.ts"],
+      "@book-effect/google-books": ["./packages/google-books/src/index.ts"]
+    },
     "composite": true,
     "declaration": true,
     "declarationMap": true,

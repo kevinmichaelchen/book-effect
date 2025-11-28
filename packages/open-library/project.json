@@ -5,13 +5,7 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "packages/open-library/dist",
-        "tsConfig": "packages/open-library/tsconfig.lib.json",
-        "main": "packages/open-library/src/index.ts"
-      }
+      "dependsOn": ["^build"]
     },
     "typecheck": {
       "executor": "nx:run-commands",

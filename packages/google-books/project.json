@@ -5,13 +5,7 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "packages/google-books/dist",
-        "tsConfig": "packages/google-books/tsconfig.lib.json",
-        "main": "packages/google-books/src/index.ts"
-      }
+      "dependsOn": ["^build"]
     },
     "typecheck": {
       "executor": "nx:run-commands",
