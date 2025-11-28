@@ -2,7 +2,8 @@
 
 ### 🩹 Fixes
 
-- Add dependsOn to typecheck for project reference support ([5f44b39](https://github.com/kevinmichaelchen/book-effect/commit/5f44b39))
+- Add dependsOn to typecheck for project reference support
+  ([5f44b39](https://github.com/kevinmichaelchen/book-effect/commit/5f44b39))
 
 ### ❤️ Thank You
 
@@ -12,7 +13,8 @@
 
 ### 🩹 Fixes
 
-- Add repository field for npm provenance validation ([39bee5b](https://github.com/kevinmichaelchen/book-effect/commit/39bee5b))
+- Add repository field for npm provenance validation
+  ([39bee5b](https://github.com/kevinmichaelchen/book-effect/commit/39bee5b))
 
 ### ❤️ Thank You
 
@@ -22,7 +24,8 @@
 
 ### 🩹 Fixes
 
-- Add publishConfig.access for npm publishing ([3aae925](https://github.com/kevinmichaelchen/book-effect/commit/3aae925))
+- Add publishConfig.access for npm publishing
+  ([3aae925](https://github.com/kevinmichaelchen/book-effect/commit/3aae925))
 
 ### ❤️ Thank You
 
@@ -32,11 +35,13 @@
 
 ### 🚀 Features
 
-- Replace @nx/js:tsc with tsdown for building ([b4c6ff5](https://github.com/kevinmichaelchen/book-effect/commit/b4c6ff5))
+- Replace @nx/js:tsc with tsdown for building
+  ([b4c6ff5](https://github.com/kevinmichaelchen/book-effect/commit/b4c6ff5))
 
 ### 🩹 Fixes
 
-- Remove broken preVersionCommand from nx release config ([eff8ea2](https://github.com/kevinmichaelchen/book-effect/commit/eff8ea2))
+- Remove broken preVersionCommand from nx release config
+  ([eff8ea2](https://github.com/kevinmichaelchen/book-effect/commit/eff8ea2))
 
 ### ❤️ Thank You
 

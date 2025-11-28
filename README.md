@@ -1,6 +1,10 @@
 # book-effect
 
-[Effect][effect]-based clients for programmatic access to book metadata APIs.
+You've read books. They're on your bookshelf or Kindle. Maybe you've logged them
+in GoodReads. Unfortunately, GoodReads doesn't have an official API. But
+alternatives do, such as Google, Hardcover, Open Library, etc. This monorepo
+provides [Effect][effect]-based clients for programmatic access to book metadata
+APIs.
 
 ## Packages
 
