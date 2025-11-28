@@ -1,3 +1,13 @@
+## 0.2.1 (2025-11-28)
+
+### 🩹 Fixes
+
+- Add publishConfig.access for npm publishing ([3aae925](https://github.com/kevinmichaelchen/book-effect/commit/3aae925))
+
+### ❤️ Thank You
+
+- Kevin Chen @kevinmichaelchen
+
 ## 0.2.0 (2025-11-28)
 
 ### 🚀 Features
